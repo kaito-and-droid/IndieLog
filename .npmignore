@@ -1,0 +1,44 @@
+# Source files
+src/
+tsconfig.json
+
+# Development files
+.vscode/
+.claude/
+.github/
+*.log
+.env
+.env.*
+!.env.example
+
+# Git files
+.git/
+.gitignore
+
+# Test files
+test/
+tests/
+*.test.ts
+*.spec.ts
+
+# IDE
+.DS_Store
+.idea/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Local config
+indielog.config.json
+indielog.config.yaml
+indielog.config.yml
+.indielog/
+
+# Documentation that shouldn't be in package
+LICENSING.md
+TROUBLESHOOTING.md
+AUTOMATION.md
+RELEASE.md
+
+# Node modules
+node_modules/

@@ -1,0 +1,36 @@
+# IndieLog Configuration Example (YAML)
+# Save as: indielog.config.yaml
+
+projectName: "MyAwesomeProject"
+
+sources:
+  type: git
+  path: "."  # Current directory
+
+ai:
+  provider: openai  # Options: openai, claude, llama, ollama
+  model: gpt-4o-mini
+  promptStyle: friendly  # Options: friendly, technical, funny
+
+  # Optional AI settings
+  temperature: 0.7
+  maxTokens: 500
+
+  # For local Llama/Ollama only
+  # baseUrl: http://localhost:11434/v1
+
+publishers:
+  x:
+    enabled: true
+    maxRetries: 3
+    retryDelay: 1000  # milliseconds
+
+  reddit:
+    enabled: false
+    maxRetries: 3
+    retryDelay: 1000
+
+  bluesky:
+    enabled: false
+    maxRetries: 3
+    retryDelay: 1000
