@@ -30,6 +30,7 @@ const PublishersSchema = z.object({
   x: PublisherConfigSchema.optional(),
   reddit: PublisherConfigSchema.optional(),
   bluesky: PublisherConfigSchema.optional(),
+  mastodon: PublisherConfigSchema.optional(),
   devto: PublisherConfigSchema.optional(),
 });
 

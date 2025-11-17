@@ -7,6 +7,7 @@ import { Publisher, PublishResult, PublisherConfig } from './base.js';
 import { XPublisher } from './publishers/x.js';
 import { RedditPublisher } from './publishers/reddit.js';
 import { BlueskyPublisher } from './publishers/bluesky.js';
+import { MastodonPublisher } from './publishers/mastodon.js';
 import { IndieLogConfig } from '../core/config.js';
 import { logger } from '../core/logger.js';
 import chalk from 'chalk';
@@ -64,6 +65,19 @@ export class PublisherManager {
         }
       } catch (error) {
         logger.warning('Failed to load Bluesky Publisher', String(error));
+      }
+    }
+
+    // Load Mastodon publisher
+    if (publishers.mastodon?.enabled) {
+      try {
+        const mastodonPublisher = new MastodonPublisher(publishers.mastodon);
+        if (mastodonPublisher.validateConfig()) {
+          this.publishers.push(mastodonPublisher);
+          logger.debug('Loaded Mastodon Publisher');
+        }
+      } catch (error) {
+        logger.warning('Failed to load Mastodon Publisher', String(error));
       }
     }
 
